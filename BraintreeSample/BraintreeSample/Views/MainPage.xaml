@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+  x:Class="BraintreeSample.Views.MainPage"
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:ie="clr-namespace:IconEntry.FormsPlugin.Abstractions;assembly=IconEntry.FormsPlugin.Abstractions"
+  Title="{Binding Title}">
+  <!--<ContentPage.ToolbarItems>
+    <ToolbarItem
+      Command="{Binding AddPaymentMethodCommand}"
+      Icon="ic_credit_card_white_24dp.png"
+      Order="Primary"
+      Priority="0" />
+  </ContentPage.ToolbarItems>-->
+  <StackLayout
+    Padding="10,20,10,20"
+    BackgroundColor="White"
+    HorizontalOptions="FillAndExpand"
+    VerticalOptions="FillAndExpand">
+    <Label
+      FontAttributes="Bold"
+      FontSize="Medium"
+      HorizontalOptions="CenterAndExpand"
+      Text="Fitness Proteim"
+      TextColor="Black"
+      VerticalOptions="Start" />
+    <Image
+      HeightRequest="100"
+      HorizontalOptions="Center"
+      Source="drug.jpg"
+      VerticalOptions="Start"
+      WidthRequest="100" />
+    <Label
+      FontAttributes="None"
+      FontSize="Default"
+      HorizontalOptions="CenterAndExpand"
+      HorizontalTextAlignment="Center"
+      LineBreakMode="WordWrap"
+      Text="Gold standart in Protein Shakes. WHEY is the only shakes you should stock."
+      TextColor="Black"
+      VerticalOptions="Start" />
+    <Label
+      FontAttributes="Bold"
+      FontSize="Default"
+      HorizontalOptions="CenterAndExpand"
+      Text="Purchased Price"
+      TextColor="Black"
+      VerticalOptions="Start" />
+    <Label
+      FontAttributes="None"
+      FontSize="Default"
+      HorizontalOptions="CenterAndExpand"
+      Text="$100 (with $20 Reward)"
+      TextColor="Black"
+      VerticalOptions="Start" />
+    <Label
+      FontAttributes="Bold"
+      FontSize="Default"
+      HorizontalOptions="CenterAndExpand"
+      Text="Current Reward Balance"
+      TextColor="Black"
+      VerticalOptions="Start" />
+    <Label
+      FontAttributes="None"
+      FontSize="Default"
+      HorizontalOptions="CenterAndExpand"
+      Text="$50"
+      TextColor="Black"
+      VerticalOptions="Start" />
+    <Grid
+      Padding="20"
+      HorizontalOptions="CenterAndExpand"
+      VerticalOptions="Start">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="40" />
+        <RowDefinition Height="40" />
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="5*" />
+        <ColumnDefinition Width="5*" />
+      </Grid.ColumnDefinitions>
+
+      <Label
+        Grid.Row="0"
+        Grid.Column="0"
+        FontAttributes="Bold"
+        FontSize="Default"
+        HorizontalOptions="FillAndExpand"
+        Text="Pay by Reward"
+        TextColor="Black" />
+      <ie:IconEntry
+        Grid.Row="1"
+        Grid.Column="0"
+        HorizontalOptions="FillAndExpand"
+        Icon="ic_currency_usd_black_24dp.png"
+        Keyboard="Numeric"
+        Text="{Binding RewardAmount}"
+        TextColor="Black" />
+      <Label
+        Grid.Row="0"
+        Grid.Column="1"
+        FontAttributes="Bold"
+        FontSize="Default"
+        HorizontalOptions="FillAndExpand"
+        Text="Pay by Credit Card"
+        TextColor="Black" />
+      <ie:IconEntry
+        Grid.Row="1"
+        Grid.Column="1"
+        HorizontalOptions="FillAndExpand"
+        Icon="ic_currency_usd_black_24dp.png"
+        Keyboard="Numeric"
+        Text="{Binding PayAmount}"
+        TextColor="Black" />
+    </Grid>
+
+    <Button
+      Margin="0,0,0,10"
+      BackgroundColor="Orange"
+      BorderRadius="20"
+      Command="{Binding AddPaymentMethodCommand}"
+      HeightRequest="50"
+      HorizontalOptions="Center"
+      Text="1. Select Payment Method"
+      TextColor="White"
+      VerticalOptions="End"
+      WidthRequest="250" />
+
+    <Button
+      BackgroundColor="Orange"
+      BorderRadius="20"
+      Command="{Binding PurchaseCommand}"
+      HeightRequest="50"
+      HorizontalOptions="Center"
+      Text="2. Pay"
+      TextColor="White"
+      VerticalOptions="End"
+      WidthRequest="150" />
+    <ActivityIndicator
+      BackgroundColor="White"
+      HorizontalOptions="Center"
+      IsEnabled="{Binding IsBusy}"
+      IsRunning="{Binding IsBusy}"
+      IsVisible="{Binding IsBusy}"
+      VerticalOptions="End"
+      Color="Orange" />
+  </StackLayout>
+
+</ContentPage>

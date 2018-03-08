@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+  x:Class="BraintreeSample.Views.PaymentConfirmation"
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+  Title="{Binding Title}"
+  prism:ViewModelLocator.AutowireViewModel="True">
+  <StackLayout
+    Padding="10,20,10,20"
+    BackgroundColor="White"
+    HorizontalOptions="FillAndExpand"
+    VerticalOptions="FillAndExpand">
+    <Label
+      FontAttributes="Bold"
+      FontSize="Medium"
+      HorizontalOptions="CenterAndExpand"
+      Text="Transaction #1234567"
+      TextColor="Black"
+      VerticalOptions="Start" />
+    <Image
+      HeightRequest="100"
+      HorizontalOptions="Center"
+      Source="drug.jpg"
+      VerticalOptions="Start"
+      WidthRequest="100" />
+
+    <Grid
+      Padding="20"
+      HorizontalOptions="CenterAndExpand"
+      VerticalOptions="Start">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="40" />
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="5*" />
+        <ColumnDefinition Width="5*" />
+      </Grid.ColumnDefinitions>
+
+      <Label
+        Grid.Row="0"
+        Grid.Column="0"
+        FontAttributes="Bold"
+        FontSize="Default"
+        HorizontalOptions="Center"
+        Text="1 x Fitness Proteion"
+        TextColor="Black" />
+      <Label
+        Grid.Row="0"
+        Grid.Column="1"
+        FontAttributes="Bold"
+        FontSize="Default"
+        HorizontalOptions="Center"
+        Text="$100.00"
+        TextColor="Black" />
+
+    </Grid>
+    <Label
+      FontAttributes="Bold"
+      FontSize="Large"
+      HorizontalOptions="CenterAndExpand"
+      Text="Your Reward"
+      TextColor="DarkBlue"
+      VerticalOptions="Start" />
+    <Label
+      FontAttributes="None"
+      FontSize="Large"
+      HorizontalOptions="CenterAndExpand"
+      Text="$20.00"
+      TextColor="DarkBlue"
+      VerticalOptions="Start" />
+    <Label
+      FontAttributes="Bold"
+      FontSize="Default"
+      HorizontalOptions="CenterAndExpand"
+      Text="Current Reward Balance"
+      TextColor="Black"
+      VerticalOptions="Start" />
+    <Label
+      FontAttributes="None"
+      FontSize="Default"
+      HorizontalOptions="CenterAndExpand"
+      Text="$50"
+      TextColor="Black"
+      VerticalOptions="Start" />
+
+    <Label
+      FontAttributes="None"
+      FontSize="Default"
+      HorizontalOptions="CenterAndExpand"
+      HorizontalTextAlignment="Center"
+      LineBreakMode="WordWrap"
+      Text="You can use your reward in your next purchase."
+      TextColor="Black"
+      VerticalOptions="Start"
+      VerticalTextAlignment="Center" />
+
+    <BoxView HeightRequest="10" Color="Transparent" />
+
+    <Label
+      FontAttributes="None"
+      FontSize="Default"
+      HorizontalOptions="CenterAndExpand"
+      HorizontalTextAlignment="Center"
+      LineBreakMode="WordWrap"
+      Text="If 3 more people purchase this product before 15 Feb 2018 12:44, you will get an extra $10 Reward."
+      TextColor="Black"
+      VerticalOptions="Start"
+      VerticalTextAlignment="Center" />
+
+    <BoxView HeightRequest="10" Color="Transparent" />
+
+    <Label
+      FontAttributes="None"
+      FontSize="Default"
+      HorizontalOptions="CenterAndExpand"
+      HorizontalTextAlignment="Center"
+      LineBreakMode="WordWrap"
+      Text="Ğşease help us share the product this product with your friends. The mpre people joining your group, the bigger is the group buying power."
+      TextColor="Black"
+      VerticalOptions="Start"
+      VerticalTextAlignment="Center" />
+
+    <Button
+      BackgroundColor="Orange"
+      BorderRadius="20"
+      Command="{Binding PurchaseCommand}"
+      HeightRequest="50"
+      HorizontalOptions="Center"
+      Text="Share"
+      TextColor="White"
+      VerticalOptions="End"
+      WidthRequest="150" />
+  </StackLayout>
+
+</ContentPage>
